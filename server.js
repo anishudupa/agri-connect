@@ -3,10 +3,8 @@ import { app } from "./app.js"
 import { dbConnect } from "./db/connect.js"
 function main() {
     dbConnect().then(() => {
-        const { PORT, IP } = process.env
-        app.listen(PORT, IP, () =>
-            console.log(`app is listening on port ${PORT}`)
-        )
+        const { PORT } = process.env
+        app.listen(PORT, () => console.log(`app is listening on port ${PORT}`))
     })
 }
 
