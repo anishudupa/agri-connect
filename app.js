@@ -20,6 +20,10 @@ app.use("/api", landRoutes)
 app.use("/api", storageRoutes)
 app.use("/api", cropRoutes)
 
+app.get("/", (_, res) => {
+    res.send("Hello World")
+})
+
 app.get("/test", (req, res) => {
     return res.status(200).json({ message: "test route" })
 })
